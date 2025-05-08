@@ -1,7 +1,7 @@
 /*
  * Crea una lista de notas de estudiantes.
  */
-public class Notas {
+public class Notas implements NotasInterface {
     private double[] noteList; 
     private static int MAX_SIZE = 30; //Cantidad maxima de notas
     private int index; 
@@ -11,14 +11,17 @@ public class Notas {
         index = 0;
     }
 
+    @Override 
     public void ingresarNota(double nota) {
         if(estaCompleto()) {
             System.out.println("Error, la lista esta completa.");
+            return; 
         }
         noteList[index] = nota;
         index++; 
     }
 
+    @Override
     public void mostrarNotas() {
         System.out.println("Todas las notas: "); 
         for(int i = 0; i < index; i++) {
@@ -26,17 +29,17 @@ public class Notas {
         }
     }
 
+    @Override
     public double promedio() {
         double suma = 0.0; 
-        int contador = 0; 
         for(int i = 0; i < index; i++) {
-            suma = suma + noteList[i]; 
-            contador++; 
+            suma = suma + noteList[i];  
         }
 
-        return suma / contador; 
+        return suma / index; 
     }
 
+    @Override
     public void notasMayores() {
         System.out.println("Notas mayores a 7: ");
         for(int i = 0; i < index; i++) {
@@ -46,6 +49,7 @@ public class Notas {
         }
     }
 
+    @Override
     public double elimNotaMasBaja() {
         if (index == 0) return -1;
 
@@ -66,6 +70,7 @@ public class Notas {
         return notaMin;
     }
 
+    @Override
     public boolean estaCompleto() {
         return index == MAX_SIZE; 
     }

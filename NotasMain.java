@@ -2,7 +2,7 @@
 public class NotasMain {
     public static void main(String[] args) {
 
-        Notas noteList = new Notas();
+        NotasInterface noteList = new Notas();
 
         noteList.ingresarNota(2.3);
         noteList.ingresarNota(3.8);

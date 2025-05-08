@@ -1,6 +1,6 @@
 public class TareasMain {
     public static void main(String[] args) {
-        Tareas tarea = new Tareas(); 
+        TareasInterface tarea = new Tareas(); //Polimorfismo 
 
         tarea.agregarTarea("Estudiar"); 
         tarea.agregarTarea("Cocinar");
@@ -19,6 +19,6 @@ public class TareasMain {
         System.out.println("Se encuentra cocinar dentro de tareas?");
         tarea.verificar("Cocinar"); 
 
-        tarea.listaFinal(); 
+        tarea.mostrarListaFinal(); 
     }
 }

@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List; 
 
-public class Tareas {
+public class Tareas implements TareasInteface {
     
     private List<String> lista; 
 
     public Tareas() {
-        lista = new ArrayList<>(); 
+        lista = new ArrayList<>();
     }
 
     public void agregarTarea(String tarea) {
@@ -36,7 +36,7 @@ public class Tareas {
         return false; 
     }
 
-    public void listaFinal() {
+    public void mostrarListaFinal() {
         for(String tarea : lista) {
             System.out.println("Tarea: " + tarea);  
         }
